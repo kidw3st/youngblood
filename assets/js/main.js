@@ -174,6 +174,22 @@
   }
 
   /* ---------------------------------------------------------------------
+     7b. Ambient hero EQ — sound made visible behind the wordmark
+  --------------------------------------------------------------------- */
+  const heroEq = $('#heroEq');
+  if (heroEq && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const bars = 56;
+    let html = '';
+    for (let i = 0; i < bars; i++) {
+      const hMax = 14 + Math.round(Math.abs(Math.sin(i * 0.7)) * 70 + Math.random() * 20);
+      const dur = (1 + Math.random() * 1.4).toFixed(2);
+      const delay = (Math.random() * 1.6).toFixed(2);
+      html += `<span style="--h-max:${hMax}px;--dur:${dur}s;--delay:${delay}s"></span>`;
+    }
+    heroEq.innerHTML = html;
+  }
+
+  /* ---------------------------------------------------------------------
      8. Back to top
   --------------------------------------------------------------------- */
   const toTop = $('.to-top');
