@@ -1,6 +1,7 @@
 import { BoomerangVideoBg } from './components/BoomerangVideoBg';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { NowPlayingWidget } from './components/NowPlayingWidget';
 
 export function App() {
   return (
@@ -8,6 +9,7 @@ export function App() {
       <BoomerangVideoBg />
       <Header />
       <Hero />
+      <NowPlayingWidget />
     </div>
   );
 }
